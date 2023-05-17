@@ -1,0 +1,23 @@
+<div class="all bg-[#2C3333] h-screen w-full flex items-center justify-center">
+  <div>
+    <div class="m-5 text-center text-white ">
+      <h2 class="text-2xl">Ingeniero en Sistemas Computacionales</h2>
+      <h1 class="text-3xl">Ricardo Tenorio Ruiz</h1>
+      <h3 class="text-xl font-bold">Desarrollador Full-Stack</h3>
+      <hr class="mt-10 border border-white" />
+    </div>
+  </div>
+  <div class="fondo h-screen w-screen flex items-center justify-center border border-l-4 border-l-[#0E8388] border-[#2E4F4F] text-white p-10 ">
+    <div>
+      <div class="w-full grid grid-cols-2 md:grid-cols-3">
+        <app-button title="Tecnologias" (click)="clickOption(1)"></app-button>
+        <app-button title="Proyectos" (click)="clickOption(2)"></app-button>
+        <app-button title="Información Personal" (click)="clickOption(3)"></app-button>
+      </div>
+      <div class="conten" [ngClass]="{'conten-anim': animate}">
+        <app-section description={{conten}}></app-section>
+      </div>
+    </div>
+  </div>
+</div>
+
