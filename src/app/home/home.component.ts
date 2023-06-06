@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,34 +6,22 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  @Input() conten: string | undefined;
-  animate = false;
+  currentTheme: string = 'default';
+  parametro: number | undefined;
+  theme: string ='theme1';
 
-  constructor() {}
 
-  startAnimation() {
-    this.animate = true;
+  constructor(private cdRef: ChangeDetectorRef) {}
+  
+  recibirParametro(valor: number) {
+    this.parametro = valor;
+    this.cdRef.detectChanges();
+  }
+  recibirTheme(valor: string) {
+    this.theme = valor;
+    this.cdRef.detectChanges();
   }
 
-  clickOption(key: number) {
-    switch (key) {
-      case 1:
-        this.conten =
-          'Aqui tengo mis conocimientos en las tecnologias que he usado a lo lago de mi desarrollo profecional, adjunto asi mismo proyectos propios creados con estas tecnologías';
-        this.startAnimation();
-        break;
-      case 2:
-        this.conten =
-          'Aca hago mención de los proyectos en los que estado involucrado en su desarrollo';
-        this.startAnimation();
-        break;
-      case 3:
-        this.conten = 'Aqui explico un poco mas de mi, mis metas y propositos';
-        this.startAnimation();
-        break;
 
-      default:
-        break;
-    }
-  }
+
 }

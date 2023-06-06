@@ -1,12 +1,6 @@
 .all{
-  background-color: #2e4f4f;
+  background-color: #ffffff;
   opacity: 0.9;
-  background-image: repeating-radial-gradient(
-      circle at 0 0,
-      transparent 0,
-      #2e4f4f 14px
-    ),
-    repeating-linear-gradient(#0e838855, #0e8388);
 }
 
 .fondo {
